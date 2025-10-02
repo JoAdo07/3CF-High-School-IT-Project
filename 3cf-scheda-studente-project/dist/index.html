@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>3CF Scheda Studente Project</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html>
+  <head>
+    <!--
+      Il tag head contiene tutte le informazioni utili per i browser. Non vengono stampati a video ma servono per         indicizzare il sito, la pagina e i suoi componenti.
+      All'interno di head possiamo trovare ad esempio title, meta, i collegamenti ai vari file CSS e JS, etc.
+    -->
+    <title>Primo progetto</title>
+  </head>
+  <body>
+    <!-
+•  Body contiene invece tutti gli elementi che compongono il "corpo" della pagina e che dovranno essere                 stampati a video. -->
+    <h1>PRIMO PROGETTO WEB</h1>
+    <hr>
+    <form>
+      <!-•  Una form è un contenitore di input. Un input rappresenta un dato proveniente dall'utento o calcolato dal             mio programma. -->
+      <h3>LATO</h3>
+      <input  type="number"
+              name="lato"
+              placeholder="Misura del lato in cm"
+              onBlur="if(this.value <= 0)
+                      {
+                        this.value = 10;
+                        alert('Il valore inserito non era corretto ed è stato modificato a 10')
+                      }
+                      "
+             >
+      <br>
+      <h3>AREA</h3>
+      <input  type="text"
+              name="area"
+              readonly>
+      <br>
+      <input  type="button"
+              value="CALCOLA"
+              onClick="area.value = lato.value * lato.value"    
+             >
+      <!-•  onClick="area.value = lato.value * lato.value"
+            Questo codice indica che quando viene cliccato il pulsante e si verifica l'evento click, il gestore                 onClick recupera il valore dell'input con nome lato (lato.value) e lo moltiplica per sé stesso. Fatto               ciò attribuisce il risultato al valore dell'input con nome area (area.value)
+      -->
+    </form>
+<hr>
+MEDIA INFORMATICA
+    <input type="number"
+           name="mediaIT"        onBlur="if(this.value<0 || this.value>10)
+                   {
+                   this.value=5;
+                   }
+                   "
+           >
+  </body>
+</html>
+<!--
+  Un tag è un contenitore all'interno del quale posso inserire informazioni.
+  I tag non vengono graficati sulla pagina ma servono al browser per tradurre il contenuto e visualizzarlo.
+  Ci sono delle regole per i tag:
+  1 • Quando apro un tag, devo ricordarmi di chiuderlo.
+  2 • Se apro un tag <body> devo chiudere il tag richiamandolo con lo stesso nome </body>
+  3 • Rispettare i criteri di nidificazione.
+      Se viene aperto un tag contenitore come ad esempio:
+      <html>
+        <body>
+      Prima di chiudere html dovete aver chiuso body.
+  4 • Rispettare il CAMEL-CASE -> nomeECognome
+      <Html> ->   la prima lettera di Html è maiuscola, quindi anche la prima lettera del tag in chiusura sarà                         maiuscola
+  5 • Ogni tag può avere degli ATTRIBUTI. Ogni attributo può avere dei VALORI.
+      Ogni attributo va inserito all'interno dei doppi apici: "ATTRIBUTO:VALORE"
+      <h1 style="color:red"
+      style indica che voglio agire sullo stile. Indica l'attributo.
+      color: indica quale elemento dello stile voglio modificare.
+      red indica che voglio modificare il colore in rosso.
+  6 • I doppi apici possono contenere gli apici singoli '' ma non il contrario.
+      "cia'o" -> OK
+      'cia"o' -> SBAGLIATO
+
+EVENTI E GESTORI DI EVENTI
+Javascript lavora con gli eventi e i gestori di evento.
+Se non succede nulla nel mio programma, nulla viene calcolato.
+L'utente per calcolare l'area deve inserire un input e CLICCARE sul pulsante calcola.
+L'evento in questo caso sarà CLICK.
+onClick invece sarà il GESTORE DI EVENTO responsabile di attivarsi quando si verifica l'evento click per calcolare
+l'area del quadrato e stampare la risposta nell'apposito spazio bianco nella form.
+
+Esistono altri eventi oltre a click:
+
+• Blur: si attiva quando l'utente abbandona una casella di input (viene gestito da onBlur).
+• Focus: si attiva quando l'utente entra in una casella di input (viene gestito da onFocus).
+• Change: si attiva quando l'utente o il programma cambiano il valore all'interno di un input (viene gestito da onChange).
+-->
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
